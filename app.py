@@ -5,7 +5,7 @@ import os
 
 # Load the pipeline from the pickle file
 # Use os.path.join to ensure compatibility with Streamlit Cloud
-pipeline_path = os.path.join(os.path.dirname(__file__), 'xgboost_pipeline.pkl')
+pipeline_path = os.path.join(os.path.dirname(__file__), '../xgboost_pipeline.pkl')
 with open(pipeline_path, 'rb') as file:
     loaded_pipeline = pickle.load(file)
 
