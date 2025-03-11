@@ -1,12 +1,11 @@
+
 import streamlit as st
 import pandas as pd
 import pickle
-import os
+from pyngrok import ngrok
 
 # Load the pipeline from the pickle file
-# Use os.path.join to ensure compatibility with Streamlit Cloud
-pipeline_path = os.path.join(os.path.dirname(__file__), '../xgboost_pipeline.pkl')
-with open(pipeline_path, 'rb') as file:
+with open('xgboost_pipeline.pkl', 'rb') as file:
     loaded_pipeline = pickle.load(file)
 
 # Set up the Streamlit app title
@@ -48,3 +47,4 @@ if st.button("Predict"):
         st.success("Loan Approved!")
     else:
         st.error("Loan Rejected.")
+
